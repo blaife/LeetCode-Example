@@ -81,9 +81,38 @@ public class Solution {
         return res;
     }
 
+    /**
+     * 不执行二分法，感觉还更快了呢
+     * @param nums
+     * @param target
+     * @return
+     */
+    public int[] searchRange2(int[] nums, int target) {
+        int a = -1;
+        int b = -1;
+        for (int i = 0; i <= nums.length-1; i++) {
+            if (nums[i] == target) {
+                if (a == -1) {
+                    a = i;
+                }
+            } else {
+                if (nums[i] != target) {
+                    if (a != -1) {
+                        b = i-1;
+                        break;
+                    }
+                }
+            }
+        }
+        if (a != -1 && b == -1) {
+            b = nums.length-1;
+        }
+        int[] res = new int[]{a,b};
+        return res;
+    }
 
     public static void main(String[] args) {
-        int[] x = new Solution().searchRange(new int[]{2,2}, 2);
+        int[] x = new Solution().searchRange2(new int[]{2,2}, 2);
         for (int res : x){
             System.out.print(res);
         }
