@@ -1,7 +1,5 @@
 package leetcode.array.t004medianoftwosortedarrays;
 
-import com.sun.deploy.util.ArrayUtil;
-
 /**
  * """""""""""""""""""寻找两个有序数组的中位数"""""""""""""""""""
  * 题意：

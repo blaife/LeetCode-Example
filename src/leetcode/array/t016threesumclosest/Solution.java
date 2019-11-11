@@ -1,8 +1,6 @@
 package leetcode.array.t016threesumclosest;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * """""""""""""""""""""最接近的三数之和"""""""""""""""""""""

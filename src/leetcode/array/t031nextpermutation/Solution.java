@@ -1,7 +1,5 @@
 package leetcode.array.t031nextpermutation;
 
-import java.util.Arrays;
-
 /**
  * """""""""""""""""""""""""""下一个排列"""""""""""""""""""""""""""
  * 题意：
