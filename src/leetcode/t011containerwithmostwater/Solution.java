@@ -1,4 +1,4 @@
-package leetcode.array.t011containerwithmostwater;
+package leetcode.t011containerwithmostwater;
 
 /**
  * """"""""""""""""""""盛最多水的容器""""""""""""""""""""

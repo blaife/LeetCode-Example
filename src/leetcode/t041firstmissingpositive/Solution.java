@@ -1,4 +1,4 @@
-package leetcode.array.t041firstmissingpositive;
+package leetcode.t041firstmissingpositive;
 
 import java.util.Arrays;
 

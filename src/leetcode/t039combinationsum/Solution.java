@@ -1,4 +1,4 @@
-package leetcode.array.t039combinationsum;
+package leetcode.t039combinationsum;
 
 import java.util.ArrayList;
 import java.util.List;

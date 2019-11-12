@@ -1,4 +1,4 @@
-package leetcode.array.t026removeduplicatesfromsortedarray;
+package leetcode.t026removeduplicatesfromsortedarray;
 
 /**
  * """""""""""""""""""""""删除排序数组中的重复项"""""""""""""""""""""""

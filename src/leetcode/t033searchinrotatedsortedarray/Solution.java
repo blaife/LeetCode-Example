@@ -1,4 +1,4 @@
-package leetcode.array.t033searchinrotatedsortedarray;
+package leetcode.t033searchinrotatedsortedarray;
 
 /**
  * """""""""""""""""""""""""""""搜索旋转排序数组"""""""""""""""""""""""""""""

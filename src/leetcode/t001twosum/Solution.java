@@ -1,4 +1,4 @@
-package leetcode.array.t001twosum;
+package leetcode.t001twosum;
 
 /**
  * """""""""""""""""""""""""""""两数之和"""""""""""""""""""""""""""""

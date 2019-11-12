@@ -1,4 +1,4 @@
-package leetcode.array.t018foursum;
+package leetcode.t018foursum;
 
 
 import java.util.ArrayList;

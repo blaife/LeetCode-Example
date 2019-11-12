@@ -1,4 +1,4 @@
-package leetcode.array.t027removeelement;
+package leetcode.t027removeelement;
 
 /**
  * """""""""""""""""""""""""""移除元素"""""""""""""""""""""""""""

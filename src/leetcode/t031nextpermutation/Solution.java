@@ -1,4 +1,4 @@
-package leetcode.array.t031nextpermutation;
+package leetcode.t031nextpermutation;
 
 /**
  * """""""""""""""""""""""""""下一个排列"""""""""""""""""""""""""""

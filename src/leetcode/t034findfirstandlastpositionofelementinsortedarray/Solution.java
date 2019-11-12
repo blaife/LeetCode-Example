@@ -1,4 +1,4 @@
-package leetcode.array.t034findfirstandlastpositionofelementinsortedarray;
+package leetcode.t034findfirstandlastpositionofelementinsortedarray;
 
 /**
  * """""""""""""""""""""""""""""""在排序数组中查找元素的第一个和最后一个位置"""""""""""""""""""""""""""""""

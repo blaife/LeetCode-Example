@@ -1,4 +1,4 @@
-package leetcode.array.t015threesum;
+package leetcode.t015threesum;
 
 import java.util.ArrayList;
 import java.util.Arrays;

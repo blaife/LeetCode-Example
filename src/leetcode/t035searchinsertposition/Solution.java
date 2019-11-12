@@ -1,4 +1,4 @@
-package leetcode.array.t035searchinsertposition;
+package leetcode.t035searchinsertposition;
 
 /**
  * """""""""""""""""""""""""""""""""""搜索插入位置"""""""""""""""""""""""""""""""""""

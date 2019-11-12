@@ -1,4 +1,4 @@
-package leetcode.array.t016threesumclosest;
+package leetcode.t016threesumclosest;
 
 import java.util.Arrays;
 

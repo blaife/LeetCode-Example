@@ -1,4 +1,4 @@
-package leetcode.array.t004medianoftwosortedarrays;
+package leetcode.t004medianoftwosortedarrays;
 
 /**
  * """""""""""""""""""寻找两个有序数组的中位数"""""""""""""""""""
