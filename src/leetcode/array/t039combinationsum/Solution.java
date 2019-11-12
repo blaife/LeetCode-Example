@@ -1,4 +1,4 @@
-package leetcode.array.t038combinationsum;
+package leetcode.array.t039combinationsum;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,6 +49,9 @@ public class Solution {
         for (int i = start; i < len; i++) {
             pre.add(candidates[i]);
             findCombinationSum(residue - candidates[i], i, pre);
+            // 重点 -- pop()函数返回栈顶的元素，并且将该栈顶元素出栈。
+            // 即每次执行完毕之后，将当前add进去的元素出栈，不会影响到每次执行
+            // 使用List也可以完成 pop_back 删除最后的元素   pop_front 删除最开头的元素
             pre.pop();
         }
     }
