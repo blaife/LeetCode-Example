@@ -49,4 +49,9 @@ public class Solution {
         }
         return cur[n-1];
     }
+
+    public static void main(String[] args) {
+        int result = new Solution().uniquePaths2(3, 3);
+        System.out.println(result);
+    }
 }
