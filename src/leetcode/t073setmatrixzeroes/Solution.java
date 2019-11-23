@@ -51,6 +51,7 @@ public class Solution {
         Arrays.fill(x,1);
         Arrays.fill(y,1);
 
+        // 便利确定哪一行哪一列将设置为0
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
                 if (matrix[i][j] == 0) {
