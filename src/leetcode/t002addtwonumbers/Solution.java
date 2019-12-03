@@ -14,6 +14,7 @@ package leetcode.t002addtwonumbers;
  */
 public class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        // 动态规划
         ListNode pre = new ListNode(0);
         ListNode cur = pre;
         int carry = 0;
