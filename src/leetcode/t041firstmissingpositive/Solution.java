@@ -22,7 +22,7 @@ import java.util.Arrays;
  */
 public class Solution {
     /**
-     * 单次循环处理
+     * 单次循环处理 排除特殊情况 排序后循环处理
      * @param nums
      * @return
      */
