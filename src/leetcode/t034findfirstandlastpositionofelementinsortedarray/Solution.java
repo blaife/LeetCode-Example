@@ -91,16 +91,16 @@ public class Solution {
         int a = -1;
         int b = -1;
         for (int i = 0; i <= nums.length-1; i++) {
-            if (nums[i] == target) {
-                if (a == -1) {
-                    a = i;
-                }
-            } else {
+            if (nums[i] != target) {
                 if (nums[i] != target) {
                     if (a != -1) {
                         b = i-1;
                         break;
                     }
+                }
+            } else {
+                if (a == -1) {
+                    a = i;
                 }
             }
         }
