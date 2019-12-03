@@ -26,6 +26,7 @@ import java.util.Map;
  */
 public class Solution {
     public int lengthOfLongestSubstring(String s) {
+        // 创建左指针配置map集合提取最左值
         int max = 0;
         int left = 0;
         Map<Character, Integer> map = new HashMap<>();
