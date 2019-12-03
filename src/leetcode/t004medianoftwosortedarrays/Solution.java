@@ -22,7 +22,7 @@ package leetcode.t004medianoftwosortedarrays;
 public class Solution {
 
     /**
-     * 解法一：简单的合并排序后取中位数 -- 性能极差  未达到要求
+     * 解法1：简单的合并排序后取中位数 -- 性能极差  未达到要求
      * @param nums1
      * @param nums2
      * @return
@@ -49,7 +49,7 @@ public class Solution {
     }
 
     /**
-     * 两个数组从头取值判断，到达中位数位置后停止 未达到要求
+     * 解法2：两个数组从头取值判断，到达中位数位置后停止 未达到要求
      * @param A
      * @param B
      * @return
