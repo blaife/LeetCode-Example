@@ -22,24 +22,17 @@ package leetcode.t520detectcapital;
 public class Solution {
 
     /**
-     * 不完全循环，找出所有错误情况
+     * 当前循环字符前一位的判断
      * @param word
      * @return
      */
     public boolean detectCapitalUse(String word) {
-        Boolean isFirstLower = true; // 默认首字母小写
-        for (int i = 0; i < word.length(); i++) {
-            // 当前字母大写情况
-            if (word.charAt(i) - 'A' <= 25) {
-                if (i == 0) { // 首字符则更改标识
-                    isFirstLower = false;
-                } else { // 非首字符则验证首字母是否小写及前一位是否小写（错误情况）
-                    if (isFirstLower || word.charAt(i-1) - 'A' > 25) {
-                        return false;
-                    }
+        for (int i = 1; i < word.length(); i++) {
+            if (word.charAt(i) - 'A' <= 25) { // 当前字母大写情况
+                if (word.charAt(i-1) - 'A' > 25) {
+                    return false;
                 }
-            } else { // 当前字母小写
-                // 从第三个字符进行合法判断，若前一位为大写则为错误情况
+            } else { // 当前字母小写情况
                 if (i > 1 && word.charAt(i-1) - 'A' <= 25) {
                     return false;
                 }
