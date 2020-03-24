@@ -1,4 +1,4 @@
-package leetcode.interview40zuixiaodekgeshulcof;
+package leetcode.theswordreferstooffer.t40zuixiaodekgeshulcof;
 
 import java.util.Arrays;
 
