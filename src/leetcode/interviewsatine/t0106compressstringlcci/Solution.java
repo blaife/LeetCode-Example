@@ -1,4 +1,4 @@
-package leetcode.interview0106compressstringlcci;
+package leetcode.interviewsatine.t0106compressstringlcci;
 
 /**
  * """""""""""""""""""""""""""""""""""""""""""""面试题 01.06. 字符串压缩"""""""""""""""""""""""""""""""""""""""""""""
