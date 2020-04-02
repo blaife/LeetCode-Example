@@ -1,12 +1,5 @@
 package leetcode.t289gameoflife;
 
-import com.sun.jmx.remote.internal.ArrayQueue;
-import sun.invoke.empty.Empty;
-
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import java.util.Queue;
-
 /**
  * @author Blaife
  * @description 289 - 生命游戏
