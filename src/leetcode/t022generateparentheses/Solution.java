@@ -17,15 +17,22 @@ import java.util.List;
  *   "()()()"
  * ]
  *
- **/
+ *
+ * @author Blaife
+ */
 public class Solution {
-    /**
-     * 这种赵所有可能情况的提一般来说都是递归，需要找到切入点(关键条件)
+    /*
+     * 这种找所有可能情况的题一般来说都是递归，需要找到切入点(关键条件)
      * 回溯应该说是递归的扩展了，在每次递归后除此次痕迹时回溯和递归的差异点
      */
-    private static List<String> result = new ArrayList<>(); // 最终结果的存放位置
+
+    /**
+     * 功能描述: 最终结果的存放位置
+     */
+    private static List<String> result = new ArrayList<>();
     public List<String> generateParenthesis(int n) {
-        result = new ArrayList<>(); // 初始化值（在leetcode测试时发现会携带上次运算的值）
+        // 初始化值（在leetcode测试时发现会携带上次运算的值）
+        result = new ArrayList<>();
         recallMethod(new StringBuffer(), n, 0, 0);
         return result;
     }
@@ -39,20 +46,25 @@ public class Solution {
      * @return
      */
     public static void recallMethod(StringBuffer s, int n, int left, int right) {
-        if (left+right == n+n) { // 最大值时 加入返回值中
+        // 最大值时 加入返回值中
+        if (left+right == n+n) {
             result.add(s.toString());
         }
         // 此种情况 则可添加 '（'
         if (left < n) {
             s.append('(');
-            recallMethod(s, n, left+1, right); // 递归
-            s.delete(s.length()-1, s.length()); // 执行完毕后要将此次添加的值去除
+            // 递归
+            recallMethod(s, n, left+1, right);
+            // 执行完毕后要将此次添加的值去除
+            s.delete(s.length()-1, s.length());
         }
         // 此种情况 则可添加 ')'
         if (right < left) {
             s.append(')');
-            recallMethod(s, n, left, right+1); // 递归
-            s.delete(s.length()-1, s.length()); // 执行完毕后要将此次添加的值去除
+            // 递归
+            recallMethod(s, n, left, right+1);
+            // 执行完毕后要将此次添加的值去除
+            s.delete(s.length()-1, s.length());
         }
     }
 
