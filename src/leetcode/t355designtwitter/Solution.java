@@ -50,24 +50,23 @@ public class Solution {
     }
 }
 
-/**
- * 功能描述: 设计推特 击败10%
- *      使用 ArrayList 作为tweet存储空间 （这一部分是很耗费效率的）
- *      使用 Map<Set<Integer>> 作为关注列表
- * @author: Blaife
- * @date: 2020/4/13 17:02
- */
-class Twitter {
+    /**
+     * 功能描述: 设计推特 击败10%
+     *      使用 ArrayList 作为tweet存储空间 （这一部分是很耗费效率的）
+     *      使用 Map<Set<Integer>> 作为关注列表
+     * @author: Blaife
+     * @date: 2020/4/13 17:02
+     */
+    class Twitter {
 
-    /** 推文列表 **/
-    List<String> tweetsAllList = new ArrayList<>();
+        /** 推文列表 **/
+        List<String> tweetsAllList = new ArrayList<>();
 
-    /** 关注列表 **/
-    Map<Integer, HashSet<Integer>> attentionMap = new HashMap<>();
+        /** 关注列表 **/
+        Map<Integer, HashSet<Integer>> attentionMap = new HashMap<>();
 
-    /** 在此初始化您的数据结构。 */
-    public Twitter() {
-
+        /** 在此初始化您的数据结构。 */
+        public Twitter() {
     }
 
     /** 撰写新的推文。 */
