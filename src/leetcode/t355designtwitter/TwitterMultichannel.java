@@ -25,20 +25,27 @@ public class TwitterMultichannel {
 
     /**
      * 合并 k 组推文使用的数据结构（可以在方法里创建使用），声明成全局变量非必需，视个人情况使用
+     * PriorityQueue 一个基于优先级的无界优先级队列。
      */
     private static PriorityQueue<Tweet> maxHeap;
 
     /**
-     * Initialize your data structure here.
+     * 推特数量
+     */
+    private static final int TWEET_SIZE = 10;
+
+    /**
+     * 初始化方法
      */
     public TwitterMultichannel() {
         followings = new HashMap<>();
         twitter = new HashMap<>();
+        // 这是相当于直接对maxHeap中的内容进行了排序（根据timestamp）
         maxHeap = new PriorityQueue<>((o1, o2) -> -o1.timestamp + o2.timestamp);
     }
 
     /**
-     * Compose a new tweet.
+     * 发布一个tweet
      */
     public void postTweet(int userId, int tweetId) {
         timestamp++;
@@ -46,6 +53,7 @@ public class TwitterMultichannel {
             Tweet oldHead = twitter.get(userId);
             Tweet newHead = new Tweet(tweetId, timestamp);
             newHead.next = oldHead;
+            // 新的推特在头部，旧的推特在尾部
             twitter.put(userId, newHead);
         } else {
             twitter.put(userId, new Tweet(tweetId, timestamp));
@@ -53,18 +61,18 @@ public class TwitterMultichannel {
     }
 
     /**
-     * Retrieve the 10 most recent tweet ids in the user's news feed. Each item in the news feed must be posted by users who the user followed or by the user herself. Tweets must be ordered from most recent to least recent.
+     * 获取用户及关注用户的前十条推特
      */
     public List<Integer> getNewsFeed(int userId) {
         // 由于是全局使用的，使用之前需要清空
         maxHeap.clear();
-
         // 如果自己发了推文也要算上
         if (twitter.containsKey(userId)) {
             maxHeap.offer(twitter.get(userId));
         }
-
+        // 获取关注列表
         Set<Integer> followingList = followings.get(userId);
+        // 将关注列表发布过推特的用户添加到maxHeap
         if (followingList != null && followingList.size() > 0) {
             for (Integer followingId : followingList) {
                 Tweet tweet = twitter.get(followingId);
@@ -73,18 +81,16 @@ public class TwitterMultichannel {
                 }
             }
         }
-
-        List<Integer> res = new ArrayList<>(10);
-        int count = 0;
-        while (!maxHeap.isEmpty() && count < 10) {
+        // 需要返回的tweet数据
+        List<Integer> res = new ArrayList<>();
+        while (!maxHeap.isEmpty() && res.size() <= TWEET_SIZE) {
             Tweet head = maxHeap.poll();
             res.add(head.id);
 
-            // 这里最好的操作应该是 replace，但是 Java 没有提供
+            // 执行完毕之后如果当前twitter组中存在下一条则添加进去
             if (head.next != null) {
                 maxHeap.offer(head.next);
             }
-            count++;
         }
         return res;
     }
@@ -166,6 +172,8 @@ public class TwitterMultichannel {
         List<Integer> res1 = twitter.getNewsFeed(1);
         System.out.println(res1);
 
+        twitter.postTweet(2, 2);
+        twitter.postTweet(1, 3);
         twitter.follow(2, 1);
 
         List<Integer> res2 = twitter.getNewsFeed(2);
