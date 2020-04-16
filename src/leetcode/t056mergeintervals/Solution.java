@@ -18,14 +18,18 @@ import java.util.LinkedList;
  * 输入: [[1,4],[4,5]]
  * 输出: [[1,5]]
  * 解释: 区间 [1,4] 和 [4,5] 可被视为重叠区间。
+ * @author Blaife
  */
 public class Solution {
     public int[][] merge(int[][] intervals) {
         LinkedList<int[]> res = new LinkedList<>();
+        // 长度为0 则返回空的数组
         if (intervals == null || intervals.length == 0) {
             return res.toArray(new int[0][]);
         }
 
+        // 对数组进行排序
+        // Comparator： 使用比较器来对数组进行排序
         Arrays.sort(intervals, new Comparator<int[]>() {
             @Override
             public int compare(int[] o1, int[] o2) {
@@ -33,15 +37,19 @@ public class Solution {
             }
         });
 
-        for (int i = 0; i < intervals.length; i++) {
-            if (res.isEmpty() || res.getLast()[1] < intervals[i][0]) {
-                res.add(intervals[i]);
+        // 对每队值进行判断合并
+        for (int[] interval : intervals) {
+            // res为空或者当前最大值小于判断值的最小值，则新加组
+            // 否则则时可以合并，对最大值进行判断
+            if (res.isEmpty() || res.getLast()[1] < interval[0]) {
+                res.add(interval);
             } else {
-                res.getLast()[1] = Math.max(res.getLast()[1], intervals[i][1]);
+                res.getLast()[1] = Math.max(res.getLast()[1], interval[1]);
             }
         }
 
-        //为什么放0，0长度？可以看下源码就知道了
+        // 为什么放0，0长度？可以看下源码就知道了
+        // 对参数的长度进行了判断，及更多的处理
         return res.toArray(new int[0][0]);
     }
 }
