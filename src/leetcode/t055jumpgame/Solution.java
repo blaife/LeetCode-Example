@@ -22,18 +22,30 @@ package leetcode.t055jumpgame;
  * 解释: 无论怎样，你总会到达索引为 3 的位置。但该位置的最大跳跃长度是 0 ， 所以你永远不可能到达最后一个位置。
  */
 public class Solution {
-    // 逆推找0。
+    /**
+     * 功能描述: 逆推找0。
+     * @author: Blaife
+     * @date: 2020/4/17 13:48
+     * @param nums 跳跃数组
+     * @return: boolean
+     */
     public boolean canJump(int[] nums) {
         for (int i = 0; i < nums.length-1; i++) {
+            // 找到为0的位置
             if (nums[i] == 0) {
+                // 第一个为0， 则一定false
                 if (i == 0) {
                     return false;
                 }
+                // 找到前一位
                 int num = i - 1;
+                // 一直向前递进
                 while (num >= 0) {
+                    // 成立则说明能跳过这个为0的位置
                     if (nums[num] > i-num){
                         break;
                     }
+                    // 一直递推到0 的位置都无法跳过这个位置，则说明永远都无法到达最后一个位置
                     if (num == 0) {
                         return false;
                     }
@@ -44,13 +56,21 @@ public class Solution {
         return true;
     }
 
-    // 更新最远距离
+    /**
+     * 功能描述: 更新最远距离
+     * @author: Blaife
+     * @date: 2020/4/17 13:49
+     * @param nums 跳跃数组
+     * @return: boolean
+     */
     public boolean canJump2(int[] nums) {
         int k = 0;
         for (int i = 0; i < nums.length; i++) {
+            // 当前所能跳到的最大位置大于当前位置的下标， 则一定能到达这个位置
             if (k < i) {
                 return false;
             }
+            // 更新最远的距离 为 K值 与 到达i位置再跳最大距离 的比较
             k = Math.max(k, i+nums[i]);
         }
         return true;
