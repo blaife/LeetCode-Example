@@ -33,25 +33,26 @@ public class Solution {
             if(nums[mid] == target){
                 return mid;
             }
-
-            if(nums[left] <= nums[mid]){  //左边升序
-                if(target >= nums[left] && target <= nums[mid]){//在左边范围内
+            //左边升序
+            if(nums[left] <= nums[mid]){
+                //在左边范围内
+                if(target >= nums[left] && target <= nums[mid]){
                     right = mid-1;
                 }else{//只能从右边找
                     left = mid+1;
                 }
-
-            }else{ //右边升序
-                if(target >= nums[mid] && target <= nums[right]){//在右边范围内
+            //右边升序
+            }else{
+                //在右边范围内
+                if(target >= nums[mid] && target <= nums[right]){
                     left = mid +1;
                 }else{//只能从左边找
                     right = mid-1;
                 }
-
             }
             mid = left + (right-left)/2;
         }
-
-        return -1;  //没找到
+        //没找到
+        return -1;
     }
 }
