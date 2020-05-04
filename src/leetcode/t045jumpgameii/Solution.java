@@ -18,8 +18,8 @@ package leetcode.t045jumpgameii;
 public class Solution {
     /**
      * 贪心算法 寻找最远位置
-     * @param nums
-     * @return
+     * @param nums 原数组
+     * @return 最少步数
      */
     public int jump(int[] nums) {
         int end = 0;
@@ -28,7 +28,8 @@ public class Solution {
         for(int i = 0; i < nums.length - 1; i++){
             //找能跳的最远的
             maxPosition = Math.max(maxPosition, nums[i] + i);
-            if( i == end){ //遇到边界，就更新边界，并且步数加一
+            //遇到边界，就更新边界，并且步数加一
+            if( i == end){
                 end = maxPosition;
                 steps++;
             }
