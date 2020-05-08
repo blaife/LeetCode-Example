@@ -22,7 +22,7 @@ public class Solution {
     /**
      * 动态规划 - dp(i,j)=min(dp(i−1,j),dp(i−1,j−1),dp(i,j−1))+1
      * @param matrix 0， 1 数组
-     * @return
+     * @return 最大面积
      */
     public int maximalSquare(char[][] matrix) {
         int maxSide = 0;
@@ -43,6 +43,7 @@ public class Solution {
                 }
             }
         }
-        return maxSide;
+        int maxSquare = maxSide * maxSide;
+        return maxSquare;
     }
 }
