@@ -25,12 +25,14 @@ public class Solution {
 
     /**
      * 数学公式法 （java Math工具类中的sqrt方法使用的并非数学法）
-     * @param x
-     * @return
+     * @param x 原值
+     * @return 平方根
      */
     public int mySqrt(int x) {
-        // return (int) Math.sqrt(x);
-        if (x < 2) return x;
+        // sqrt ： return (int) Math.sqrt(x);
+        if (x < 2) {
+            return x;
+        }
 
         int left = (int)Math.pow(Math.E, 0.5 * Math.log(x));
         int right = left + 1;
