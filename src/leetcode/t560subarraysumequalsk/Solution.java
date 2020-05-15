@@ -25,11 +25,6 @@ public class Solution {
      *
      * 那么「[j..i][j..i] 这个子数组和为 kk 」这个条件我们可以转化为： pre[i]−pre[j−1]==k
      *
-     * 作者：LeetCode-Solution
-     * 链接：https://leetcode-cn.com/problems/subarray-sum-equals-k/solution/he-wei-kde-zi-shu-zu-by-leetcode-solution/
-     * 来源：力扣（LeetCode）
-     * 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-     *
      * @param nums 数组
      * @param k 和
      * @return 适配的子数组数量
