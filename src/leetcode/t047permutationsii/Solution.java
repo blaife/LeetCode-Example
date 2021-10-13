@@ -47,6 +47,7 @@ public class Solution {
 
         // 调转两个位置的内容，执行完成后再恢复原样
         for (int i = 0; i < nums.length; ++i) {
+            // 使 重复值保持其顺序
             if (vis[i] || (i > 0 && nums[i] == nums[i-1] && !vis[i-1])) {
                 continue;
             }
